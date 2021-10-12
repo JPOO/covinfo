@@ -6,5 +6,5 @@ class AppColor {
   static Color colorBlack = const Color(0xFF000000);
   static Color colorPurple = const Color(0xFF3B3EB9);
   static Color colorBlue = const Color(0xFF2472EE);
-  static Color colorText = const Color(0xFF2472EE);
+  static Color colorText = const Color(0xFF424242);
 }

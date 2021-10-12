@@ -1,4 +1,5 @@
 import 'package:covinfo/about.dart';
+import 'package:covinfo/info.dart';
 import 'package:covinfo/manual.dart';
 import 'package:covinfo/policy.dart';
 import 'package:covinfo/splash.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
           textTheme: GoogleFonts.openSansTextTheme(
         Theme.of(context).textTheme,
       )),
-      home: About(),
+      home: Info(),
     );
   }
 }
