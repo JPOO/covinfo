@@ -5,6 +5,7 @@ import 'package:covinfo/policy.dart';
 import 'package:covinfo/splash.dart';
 import 'package:covinfo/terms.dart';
 import 'package:flutter/material.dart';
+import 'feature.dart';
 import 'home.dart';
 import 'permission.dart';
 import 'policy.dart';
@@ -26,7 +27,31 @@ class MyApp extends StatelessWidget {
           textTheme: GoogleFonts.openSansTextTheme(
         Theme.of(context).textTheme,
       )),
-      home: Info(),
+      home: Home(),
+      onGenerateRoute: (RouteSettings settings) {
+        final List<String> pathElements = settings.name!.split('/');
+
+        if (pathElements[0] != '') {
+          return null;
+        }
+
+        switch (pathElements[1]) {
+          case 'manual':
+            return MaterialPageRoute(
+                builder: (BuildContext context) => Manual());
+          case 'policy':
+            return MaterialPageRoute(
+                builder: (BuildContext context) => Policy());
+          case 'terms':
+            return MaterialPageRoute(
+                builder: (BuildContext context) => Terms());
+          case 'about':
+            return MaterialPageRoute(
+                builder: (BuildContext context) => About());
+          default:
+            return null;
+        }
+      },
     );
   }
 }
