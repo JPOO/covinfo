@@ -1,14 +1,15 @@
 import 'package:covinfo/about.dart';
-import 'package:covinfo/info.dart';
+import 'package:covinfo/test.dart';
+import 'package:covinfo/user.dart';
 import 'package:covinfo/manual.dart';
+import 'package:covinfo/aceppt_policy.dart';
 import 'package:covinfo/policy.dart';
 import 'package:covinfo/splash.dart';
 import 'package:covinfo/terms.dart';
 import 'package:flutter/material.dart';
-import 'feature.dart';
+import 'diagnosis.dart';
 import 'home.dart';
-import 'permission.dart';
-import 'policy.dart';
+import 'aceppt_permission.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -36,6 +37,8 @@ class MyApp extends StatelessWidget {
         }
 
         switch (pathElements[1]) {
+          case 'user':
+            return MaterialPageRoute(builder: (BuildContext context) => User());
           case 'manual':
             return MaterialPageRoute(
                 builder: (BuildContext context) => Manual());
@@ -48,6 +51,9 @@ class MyApp extends StatelessWidget {
           case 'about':
             return MaterialPageRoute(
                 builder: (BuildContext context) => About());
+          case 'diagnosis':
+            return MaterialPageRoute(
+                builder: (BuildContext context) => Diagnosis());
           default:
             return null;
         }
