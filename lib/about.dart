@@ -12,6 +12,10 @@ class About extends StatefulWidget {
 class _AboutState extends State<About> {
   @override
   Widget build(BuildContext context) {
+    //Altura do display visível
+    final availableHeight = MediaQuery.of(context).size.height -
+        MediaQuery.of(context).padding.top -
+        MediaQuery.of(context).padding.bottom;
     return Scaffold(
         backgroundColor: color.AppColor.colorBlue,
         body: SafeArea(
@@ -28,30 +32,34 @@ class _AboutState extends State<About> {
                   padding: EdgeInsets.all(20),
                   child: Column(
                     children: [
-                      Row(
+                      Column(
                         children: [
-                          Icon(Icons.check_circle_outline_outlined,
-                              color: Colors.white, size: 30),
-                          SizedBox(width: 10),
-                          Text("Sobre a COVID-19",
-                              textAlign: TextAlign.left,
-                              style: TextStyle(
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.w900,
-                                  color: color.AppColor.colorWhite)),
-                          SizedBox(height: 5),
+                          Row(
+                            children: [
+                              Icon(Icons.check_circle_outline_outlined,
+                                  color: Colors.white, size: 30),
+                              SizedBox(width: 10),
+                              Text("Sobre a COVID-19",
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.w900,
+                                      color: color.AppColor.colorWhite)),
+                              SizedBox(height: 5),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Container(
+                              height: 45,
+                              child: Text(
+                                  "Informações sobre a doença da COVID-19, tratamento e vacina.",
+                                  style: TextStyle(
+                                      fontSize: 16, color: Colors.white))),
                         ],
                       ),
-                      SizedBox(height: 10),
-                      Container(
-                          height: 45,
-                          child: Text(
-                              "Informações gerais sobre a doença, tratamento e vacina.",
-                              style: TextStyle(
-                                  fontSize: 16, color: Colors.white))),
                       SizedBox(height: 20),
                       Container(
-                          height: MediaQuery.of(context).size.height - 266,
+                          height: availableHeight - 203,
                           child: Stack(
                             children: [
                               Container(
