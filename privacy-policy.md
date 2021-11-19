@@ -2,25 +2,21 @@ Privacy Policy
 ----------------
 
 ### Introdução
-Nossa política de privacidade ajudará você a entender quais informações coletamos através do aplicativo Covinfo, como a Covinfo as usa e quais opções você tem.
-A Covinfo desenvolveu o aplicativo Covinfo como um aplicativo gratuito. Este SERVIÇO é fornecido pela Covinfo sem nenhum custo e deve ser usado no estado em que se encontra.
-Se você optar por usar nosso Serviço, você concorda com a coleta e uso de informações em relação a esta política. As informações pessoais que coletamos são usadas para fornecer e melhorar o serviço. Não usaremos ou compartilharemos suas informações com ninguém, exceto conforme descrito nesta Política de Privacidade.
-Os termos usados ​​nesta Política de Privacidade têm os mesmos significados que em nossos Termos e Condições, que podem ser acessados ​​em nosso site, a menos que definido de outra forma nesta Política de Privacidade.
+Nossa política de privacidade ajudará você a entender quais informações coletamos através do aplicativo Covinfo, como as informações são utilizadas e o que voccê pode fazer em relação a isso. O aplicativo é gratuito.  Este SERVIÇO é fornecido pela Covinfo sem nenhum custo e deve ser usado no estado em que se encontra. Se você optar por usar nosso Serviço, você concorda com a coleta e uso de informações em relação a esta política. As informações pessoais que coletamos são usadas para fornecer e melhorar o serviço. Não usaremos ou compartilharemos suas informações com ninguém, exceto conforme descrito nesta Política de Privacidade. Os termos usados neste Política de Privacidade são diferentes do nossos Termos de Uso, que podem ser acessados em outra área.
 
-### Information Collection and Use  
-For a better experience while using our Service, we may require you to provide us with certain personally identifiable information, including but not limited to users name, email address, gender, location, pictures. The information that we request will be retained by us and used as described in this privacy policy.  
-The app does use third party services that may collect information used to identify you. 
+### Coleta e uso de informações
+Para uma melhor experiência ao usar nosso Serviço, podemos exigir que você nos forneça certas informações de identificação pessoal, incluindo, mas não se limitando a localização. As informações que solicitamos serão retidas por nós e usadas conforme descrito nesta política de privacidade. O aplicativo não utiliza serviços de terceiros que possam coletar informações.
 
 ### Cookies  
-Cookies are files with small amount of data that is commonly used an anonymous unique identifier. These are sent to your browser from the website that you visit and are stored on your devices’s internal memory.  
+Cookies são arquivos com uma pequena quantidade de dados que normalmente são usados como um identificador único e anônimo. Eles são enviados para o seu navegador a partir do site que você visita e são armazenados na memória interna do seu dispositivo.
 
-This Services does not uses these “cookies” explicitly. However, the app may use third party code and libraries that use “cookies” to collection information and to improve their services. You have the option  to either accept or refuse these cookies, and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.  
+Este serviço não usa esses cookies explicitamente. No entanto, o aplicativo pode usar código de terceiros e bibliotecas que usam “cookies” para coletar informações e melhorar seus serviços. Você tem a opção de aceitar ou recusar esses cookies e saber quando um cookie está sendo enviado para o seu dispositivo. Se você decidir recusar nossos cookies, pode não conseguir usar algumas partes deste Serviço. 
 
-### Location Information  
-Some of the services may use location information transmitted from users' mobile phones. We only use this information within the scope necessary for the designated service.  
+### Informações de localização
+Alguns dos serviços podem usar informações de localização transmitidas dos telefones celulares dos usuários. Só usamos essas informações dentro do escopo necessário para o serviço designado.
 
-### Device Information  
-We collect information from your device in some cases. The information will be utilized for the provision of better service and to prevent fraudulent acts. Additionally, such information will not include that which will identify the individual user.  
+### Informação de dispositivo
+Em nenhhum caso coletamos informações do seu dispositivo.
 
 ### Service Providers  
 We may employ third-party companies and individuals due to the following reasons:  
