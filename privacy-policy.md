@@ -16,27 +16,21 @@ Este serviço não usa esses cookies explicitamente. No entanto, o aplicativo po
 Alguns dos serviços podem usar informações de localização transmitidas dos telefones celulares dos usuários. Só usamos essas informações dentro do escopo necessário para o serviço designado.
 
 ### Informação de dispositivo
-Em nenhhum caso coletamos informações do seu dispositivo.
+Queremos informar aos usuários deste serviço que em nenhum momento coletamos informações do seu dispositivo.
 
-### Service Providers  
-We may employ third-party companies and individuals due to the following reasons:  
-* To facilitate our Service;
-* To provide the Service on our behalf;
-* To perform Service-related services; or
-* To assist us in analyzing how our Service is used.  
+### Provedores de serviço
+Queremos informar aos usuários deste serviço que em nenhum caso contratamos empresas tercerizadas prestadoras de serviços. 
 
-We want to inform users of this Service that these third parties have access to your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.  
+### Segurança
+Valorizamos sua confiança em nos fornecer suas informações pessoais anonimizadas, portanto, estamos nos empenhando para usar meios comercialmente aceitáveis de protegê-las. Mas lembre-se que nenhum método de transmissão pela internet, ou método de armazenamento eletrônico é 100% seguro e confiável, e não podemos garantir sua segurança absoluta.  
 
-### Security  
-We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over  the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.  
+### Privacidade infantil
+Este serviço não se dirige a ninguém com idade inferior a 18 anos. Não coletamos intencionalmente informações de identificação pessoal de crianças e adolescentes menores de 18 anos. No caso de descobrirmos que uma criança ou adolescente com menos de 18 anos nos forneceu informações pessoais, as excluímos imediatamente de nossos servidores. Se você é um pai ou responsável e está ciente de que seu filho nos forneceu informações pessoais, entre em contato para que possamos tomar as medidas necessárias. 
 
-### Children’s Privacy  
-This Services do not address anyone under the age of 13. We do not knowingly collect personal identifiable information from children under 13. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers. If you  are  a  parent  or  guardian and you are aware that your child has provided us with personal information, please contact us so that we will be able to do necessary actions.  
+### Mudanças nesta Política de Privacidade
+Podemos atualizar nossa Política de Privacidade de tempos em tempos. Portanto, recomendamos que você reveja esta página periodicamente para verificar quaisquer alterações. Iremos notificá-lo de quaisquer alterações, publicando a nova Política de Privacidade nesta página. Essas alterações entram em vigor imediatamente, após serem publicadas.
 
-### Changes to This Privacy Policy  
-We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately, after they are posted on this page.  
-
-### Contact Us  
-If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us.  
-Contact Information:  
-Email: *[xxx@email.com]*  
+### Entre em contato conosco
+Se você tiver dúvidas ou sugestões sobre nossa Política de Privacidade, não hesite em nos contatar.
+Informações de contato:
+Email: joao.oliveira@unochapeco.edu.br
