@@ -2,15 +2,32 @@ Privacy Policy
 ----------------
 
 ### Introdução
-Nossa política de privacidade ajudará você a entender quais informações coletamos através do aplicativo Covinfo, como as informações são utilizadas e o que voccê pode fazer em relação a isso. O aplicativo é gratuito.  Este SERVIÇO é fornecido pela Covinfo sem nenhum custo e deve ser usado no estado em que se encontra. Se você optar por usar nosso Serviço, você concorda com a coleta e uso de informações em relação a esta política. As informações pessoais que coletamos são usadas para fornecer e melhorar o serviço. Não usaremos ou compartilharemos suas informações com ninguém, exceto conforme descrito nesta Política de Privacidade. Os termos usados neste Política de Privacidade são diferentes do nossos Termos de Uso, que podem ser acessados em outra área.
+Nossa política de privacidade ajudará você a entender quais informações coletamos através do aplicativo Covinfo, como as informações são utilizadas e o que você pode fazer em relação a isso. O aplicativo é gratuito.  Este SERVIÇO é fornecido pela Covinfo sem nenhum custo e deve ser usado no estado em que se encontra. Se você optar por usar nosso Serviço, você concorda com a coleta e uso de informações em relação a esta política. As informações pessoais que coletamos são usadas para fornecer e melhorar o serviço. Não usaremos ou compartilharemos suas informações com ninguém, exceto conforme descrito nesta Política de Privacidade. Os termos usados neste Política de Privacidade são diferentes do nossos Termos de Uso, que podem ser acessados em outra área.
+
+### Do objetivo
+Esta projeto desenvolvido é o Trabalho de Conclusão de Curso do estudante João Paulo Oliveira da Silva, matriculado no curso de Sistemas de Informação da Univerisidade Comunitária da Região de Chapecó (UNOCHAPECÓ) no ano de 2021. O objeto é a coleta de informações pessoais anonimizados de usuários contaminados pela Covid-19. A responsabilidade das informações informadas são exclusivamente no estudante. Para mais informações, dúvidas ou sugestões, é possível entrar em contato através do e-mail joao.oliveira@unochapeco.edu.br.
 
 ### Coleta e uso de informações
-Para uma melhor experiência ao usar nosso Serviço, podemos exigir que você nos forneça certas informações de identificação pessoal, incluindo, mas não se limitando a localização. As informações que solicitamos serão retidas por nós e usadas conforme descrito nesta política de privacidade.
+Para uma melhor experiência ao usar nosso Serviço, podemos exigir que você nos forneça certas informações de identificação pessoal, como a localização. As informações que solicitamos serão retidas por nós e usadas conforme descrito nesta política de privacidade.
+
+As informações disponibilizadas pelo usuário são amazanadas em um banco de dados na nuvem com acesso exclusivamente pelo responsável deste projeto. As informaões pessoais são anonimizadas, isso significa que não é possível identificar, através de nenhum método, o indivíduo responsável pela informação. As informações solicitadas são:
+
+- Idade;
+- Raça;
+- Tipo sanguíneo;
+- Data da última dose aplicada da vacina da Covid-19;
+
+
+Além dessas informações, são solicitadas outras referentes ao diagnóstico:
+
+
+
+
 
 ### Cookies  
 Cookies são arquivos com uma pequena quantidade de dados que normalmente são usados como um identificador único e anônimo. Eles são enviados para o seu navegador a partir do site que você visita e são armazenados na memória interna do seu dispositivo.
 
-Este serviço não usa esses cookies explicitamente. No entanto, o aplicativo pode usar código de terceiros e bibliotecas que usam “cookies” para coletar informações e melhorar seus serviços. Você tem a opção de aceitar ou recusar esses cookies e saber quando um cookie está sendo enviado para o seu dispositivo. Se você decidir recusar nossos cookies, pode não conseguir usar algumas partes deste Serviço. 
+Este serviço não utiliza cookies explicitamente. No entanto, o aplicativo pode usar código de terceiros e bibliotecas que usam “cookies” para coletar informações e melhorar seus serviços. Você tem a opção de aceitar ou recusar esses cookies e saber quando um cookie está sendo enviado para o seu dispositivo. Se você decidir recusar nossos cookies, pode não conseguir usar algumas partes deste Serviço.
 
 ### Informações de localização
 Alguns dos serviços podem usar informações de localização transmitidas dos telefones celulares dos usuários. Só usamos essas informações dentro do escopo necessário para o serviço designado.
