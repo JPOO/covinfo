@@ -2,27 +2,30 @@ Privacy Policy
 ----------------
 
 ### Introdução
-Nossa política de privacidade ajudará você a entender quais informações coletamos através do aplicativo Covinfo, como as informações são utilizadas e o que você pode fazer em relação a isso. O aplicativo é gratuito.  Este SERVIÇO é fornecido pela Covinfo sem nenhum custo e deve ser usado no estado em que se encontra. Se você optar por usar nosso Serviço, você concorda com a coleta e uso de informações em relação a esta política. As informações pessoais que coletamos são usadas para fornecer e melhorar o serviço. Não usaremos ou compartilharemos suas informações com ninguém, exceto conforme descrito nesta Política de Privacidade. Os termos usados neste Política de Privacidade são diferentes do nossos Termos de Uso, que podem ser acessados em outra área.
+Nossa política de privacidade ajudará você a entender quais informações coletamos através do aplicativo Covinfo e como as informações são utilizadas. O aplicativo é gratuito. Este SERVIÇO é fornecido pela Covinfo sem nenhum custo e deve ser usado no estado em que se encontra. Se você optar por usar nosso Serviço, você concorda com a coleta e uso de informações em relação a esta política. As informações pessoais que coletamos são usadas para fornecer e melhorar o serviço. Não usaremos ou compartilharemos suas informações com ninguém, exceto conforme descrito nesta Política de Privacidade. Os termos usados neste Política de Privacidade são diferentes do nossos Termos de Uso, que podem ser acessados em outra área.
 
 ### Do objetivo
-Esta projeto desenvolvido é o Trabalho de Conclusão de Curso do estudante João Paulo Oliveira da Silva, matriculado no curso de Sistemas de Informação da Univerisidade Comunitária da Região de Chapecó (UNOCHAPECÓ) no ano de 2021. O objeto é a coleta de informações pessoais anonimizados de usuários contaminados pela Covid-19. A responsabilidade das informações informadas são exclusivamente no estudante. Para mais informações, dúvidas ou sugestões, é possível entrar em contato através do e-mail joao.oliveira@unochapeco.edu.br.
+Esta projeto desenvolvido é o Trabalho de Conclusão de Curso do estudante João Paulo Oliveira da Silva, matriculado no curso de Sistemas de Informação da Univerisidade Comunitária da Região de Chapecó (UNOCHAPECÓ) no ano de 2021. O objetivo é a coleta de informações pessoais anonimizados de usuários contaminados pela Covid-19 e utilizadas para pesquisas acadêmicas. As informações coletadas são de responsabilidade exclusiva do estudante. Para mais informações, dúvidas ou sugestões, é possível entrar em contato através do e-mail joao.oliveira@unochapeco.edu.br.
 
 ### Coleta e uso de informações
 Para uma melhor experiência ao usar nosso Serviço, podemos exigir que você nos forneça certas informações de identificação pessoal, como a localização. As informações que solicitamos serão retidas por nós e usadas conforme descrito nesta política de privacidade.
 
-As informações disponibilizadas pelo usuário são amazanadas em um banco de dados na nuvem com acesso exclusivamente pelo responsável deste projeto. As informaões pessoais são anonimizadas, isso significa que não é possível identificar, através de nenhum método, o indivíduo responsável pela informação. As informações solicitadas são:
+As informações disponibilizadas por você são amazanadas em um banco de dados na nuvem com acesso exclusivamente pelo responsável deste projeto. As informaões pessoais são anonimizadas, isso significa que não é possível identificar, através de nenhum método, o indivíduo responsável pela informação. As informações solicitadas são:
 
 - Idade;
 - Raça;
 - Tipo sanguíneo;
 - Data da última dose aplicada da vacina da Covid-19;
 
-
 Além dessas informações, são solicitadas outras referentes ao diagnóstico:
 
+- Data do diagnóstico realizado para a Covid-19;
+- Método do diagnóstico para a Covid-19.
+- Fatores de risco;
+- Sintomas e;
+- Sequelas.
 
-
-
+As informações disponibilizadas podem ser utilizadas pela UNOCHAPECÓ e compartilhadas com pesquisadores e outras intituições. Por serem informações anonimizadas, o usuário não tem o direito de solicitar a remoção, salvo quando envolverem informações de menores de idade ou quando o usuário utilizar informações indevidas.
 
 ### Cookies  
 Cookies são arquivos com uma pequena quantidade de dados que normalmente são usados como um identificador único e anônimo. Eles são enviados para o seu navegador a partir do site que você visita e são armazenados na memória interna do seu dispositivo.
