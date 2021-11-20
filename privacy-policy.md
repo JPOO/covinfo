@@ -10,17 +10,21 @@ Esta projeto desenvolvido é o Trabalho de Conclusão de Curso do estudante Joã
 ### Coleta e uso de informações
 Para uma melhor experiência ao usar nosso Serviço, podemos exigir que você nos forneça certas informações de identificação pessoal, como a localização. As informações que solicitamos serão retidas por nós e usadas conforme descrito nesta política de privacidade.
 
-As informações disponibilizadas por você são amazanadas em um banco de dados na nuvem com acesso exclusivamente pelo responsável deste projeto. As informaões pessoais são anonimizadas, isso significa que não é possível identificar, através de nenhum método, o indivíduo responsável pela informação. As informações solicitadas são:
+As informações disponibilizadas pelo usuário são armazenadas em um banco de dados na nuvem com acesso exclusivo do responsável deste projeto. As informaões pessoais são anonimizadas, isso significa que não é possível identificar, através de nenhum método, o indivíduo responsável pela informação. As informações solicitadas são:
 
 - Idade;
+- Gênero;
 - Raça;
 - Tipo sanguíneo;
-- Data da última dose aplicada da vacina da Covid-19;
+- Peso;
+- Altura;
+- Medicamentos e vitamimas;
+- Atividades físicas e;
+- Informaões sobre vacina;
 
 Além dessas informações, são solicitadas outras referentes ao diagnóstico:
 
-- Data do diagnóstico realizado para a Covid-19;
-- Método do diagnóstico para a Covid-19.
+- Informações sobre diagnóstico.
 - Fatores de risco;
 - Sintomas e;
 - Sequelas.
