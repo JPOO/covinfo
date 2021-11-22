@@ -57,4 +57,4 @@ Podemos atualizar nossa Política de Privacidade de tempos em tempos. Portanto, 
 ### Entre em contato conosco
 Se você tiver dúvidas ou sugestões sobre nossa Política de Privacidade, não hesite em nos contatar.
 Informações de contato:
-Email: joao.oliveira@unochapeco.edu.br
+Email: joao.oliveira@unochapeco.edu.br.
