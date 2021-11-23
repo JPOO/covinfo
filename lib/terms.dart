@@ -12,6 +12,9 @@ class Terms extends StatefulWidget {
 class _TermsState extends State<Terms> {
   @override
   Widget build(BuildContext context) {
+    var _safePadding = MediaQuery.of(context).padding.top +
+        MediaQuery.of(context).padding.bottom;
+
     return Scaffold(
         backgroundColor: color.AppColor.colorBlue,
         body: SafeArea(
@@ -19,7 +22,7 @@ class _TermsState extends State<Terms> {
               child: Stack(
             children: [
               Container(
-                height: MediaQuery.of(context).size.height - 250,
+                height: MediaQuery.of(context).size.height,
                 margin: const EdgeInsets.only(top: 250),
                 decoration:
                     BoxDecoration(color: color.AppColor.pageBackgroundColor),
@@ -41,12 +44,13 @@ class _TermsState extends State<Terms> {
                           SizedBox(height: 5),
                         ],
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 5),
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Container(
                           height: 45,
-                          child: Text("Leia os Termos de uso.",
+                          child: Text(
+                              "Os Termos de uso são importantes para você entender as normas de utilização do aplicativo.",
                               style: TextStyle(
                                   fontSize: 16,
                                   color: color.AppColor.colorWhite)),
@@ -54,13 +58,15 @@ class _TermsState extends State<Terms> {
                       ),
                       SizedBox(height: 20),
                       Container(
-                          height: MediaQuery.of(context).size.height - 266,
+                          height: MediaQuery.of(context).size.height -
+                              _safePadding -
+                              198,
                           child: Stack(
                             children: [
                               Container(
                                 decoration: BoxDecoration(
                                     color: Colors.white,
-                                    borderRadius: BorderRadius.circular(20),
+                                    borderRadius: BorderRadius.circular(15),
                                     boxShadow: [
                                       BoxShadow(
                                           offset: Offset(0, 0),

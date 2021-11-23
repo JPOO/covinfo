@@ -1,4 +1,4 @@
-package com.example.covinfo
+package com.covinfo.appcovinfo
 
 import io.flutter.embedding.android.FlutterActivity
 

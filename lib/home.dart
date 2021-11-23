@@ -10,14 +10,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(vsync: this);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,82 +28,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                       image: AssetImage("assets/img_logo.png"),
                     ))),
                 SizedBox(height: 20),
-                // Container(
-                //     child: RaisedButton(
-                //   onPressed: () {},
-                //   padding: const EdgeInsets.all(0.0),
-                //   shape: RoundedRectangleBorder(
-                //       borderRadius: BorderRadius.circular(80.0)),
-                //   child: Container(
-                //     width: MediaQuery.of(context).size.width,
-                //     decoration: BoxDecoration(
-                //         gradient: new LinearGradient(
-                //           begin: Alignment.centerLeft,
-                //           end: Alignment.centerRight,
-                //           colors: [
-                //             color.AppColor.colorBlue,
-                //             color.AppColor.colorPurple
-                //           ],
-                //         ),
-                //         boxShadow: [
-                //           BoxShadow(
-                //               offset: Offset(0, 5),
-                //               blurRadius: 0,
-                //               spreadRadius: 0,
-                //               color: Colors.black.withOpacity(0.1))
-                //         ],
-                //         borderRadius: BorderRadius.all(Radius.circular(100))),
-                //     padding: const EdgeInsets.fromLTRB(0, 17, 0, 17),
-                //     child: Center(
-                //       child: Text(
-                //         'RESPONDER QUESTIONÁRIO',
-                //         style: TextStyle(
-                //             fontSize: 18,
-                //             fontWeight: FontWeight.w900,
-                //             color: Colors.white),
-                //       ),
-                //     ),
-                //   ),
-                // )),
-                // ElevatedButton(
-                //   onPressed: () {
-                //     print('Hi there');
-                //   },
-                //   style: ElevatedButton.styleFrom(
-                //       padding: EdgeInsets.zero,
-                //       shape: RoundedRectangleBorder(
-                //           borderRadius: BorderRadius.circular(100))),
-                //   child: Ink(
-                //     decoration: BoxDecoration(
-                //         gradient: LinearGradient(colors: [
-                //           color.AppColor.colorBlue,
-                //           color.AppColor.colorPurple
-                //         ]),
-                //         borderRadius: BorderRadius.circular(100)),
-                //     child: Container(
-                //       height: 55,
-                //       // width: MediaQuery.of(context).size.width,
-                //       alignment: Alignment.center,
-                //       decoration: BoxDecoration(boxShadow: [
-                //         BoxShadow(
-                //             offset: Offset(0, 5),
-                //             blurRadius: 0,
-                //             spreadRadius: 0,
-                //             color: Colors.black.withOpacity(0.1)),
-                //       ], borderRadius: BorderRadius.all(Radius.circular(100))),
-                //       child: Text(
-                //         'RESPONDER QUESTIONÁRIO',
-                //         style: TextStyle(
-                //             fontSize: 18,
-                //             fontWeight: FontWeight.w900,
-                //             color: Colors.white),
-                //       ),
-                //     ),
-                //   ),
-                // ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.only(bottom: 2),
+                      padding: EdgeInsets.only(bottom: 3),
                       primary: Colors.transparent,
                       elevation: 2,
                       shadowColor: Colors.black.withOpacity(0.8),
@@ -119,13 +38,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           borderRadius: BorderRadius.circular(100))),
                   child: Ink(
                     decoration: BoxDecoration(
-                      // boxShadow: [
-                      //   BoxShadow(
-                      //       offset: Offset(0, 5),
-                      //       blurRadius: 0,
-                      //       spreadRadius: 0,
-                      //       color: Colors.black.withOpacity(0.1)),
-                      // ],
                       borderRadius: BorderRadius.circular(100),
                       gradient: LinearGradient(colors: [
                         color.AppColor.colorBlue,
@@ -133,7 +45,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                       ]),
                     ),
                     child: Container(
-                      height: 55,
+                      height: 60,
                       alignment: Alignment.center,
                       child: Text(
                         'RESPONDER QUESTIONÁRIO',
@@ -145,7 +57,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.pushNamed(context, '/user');
+                    Navigator.pushNamed(context, '/accept_policy');
                   },
                 ),
                 SizedBox(height: 30),
@@ -163,10 +75,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20),
-                            topRight: Radius.circular(50),
-                            bottomLeft: Radius.circular(20),
-                            bottomRight: Radius.circular(20),
+                            topLeft: Radius.circular(15),
+                            topRight: Radius.circular(40),
+                            bottomLeft: Radius.circular(15),
+                            bottomRight: Radius.circular(15),
                           ),
                           boxShadow: [
                             BoxShadow(
@@ -180,20 +92,18 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           Container(
                               width: 70,
                               height: 80,
-                              // margin: const EdgeInsets.only(
-                              //     top: 10, right: 230, bottom: 10, left: 10),
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                 image: AssetImage("assets/img_help.png"),
                               ))),
                           Container(
                             width: MediaQuery.of(context).size.width - 200,
-                            // width: double.infinity,
                             margin: const EdgeInsets.only(left: 15),
                             child: Column(
                               children: [
                                 Text(
                                     "Sua participação é importante! Entenda como colaborar com a nossa pesquisa.",
+                                    textAlign: TextAlign.left,
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w600,
@@ -206,55 +116,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     ),
                   ],
                 ),
-                // SizedBox(height: 30),
-                // Container(
-                //     width: MediaQuery.of(context).size.width,
-                //     height: 100,
-                //     child: Stack(
-                //       children: [
-                //         Container(
-                //           decoration: BoxDecoration(
-                //               color: Colors.white,
-                //               borderRadius: BorderRadius.only(
-                //                 topLeft: Radius.circular(20),
-                //                 topRight: Radius.circular(50),
-                //                 bottomLeft: Radius.circular(20),
-                //                 bottomRight: Radius.circular(20),
-                //               ),
-                //               boxShadow: [
-                //                 BoxShadow(
-                //                     offset: Offset(0, 0),
-                //                     blurRadius: 20,
-                //                     spreadRadius: 5,
-                //                     color: Colors.black.withOpacity(0.05))
-                //               ]),
-                //         ),
-                //         Container(
-                //             margin: const EdgeInsets.only(
-                //                 top: 10, right: 230, bottom: 10, left: 10),
-                //             decoration: BoxDecoration(
-                //                 image: DecorationImage(
-                //               image: AssetImage("assets/img_help.png"),
-                //             ))),
-                //         Container(
-                //             margin: const EdgeInsets.only(
-                //               top: 20,
-                //               left: 100,
-                //               bottom: 20,
-                //               right: 20,
-                //             ),
-                //             child: Column(
-                //               children: [
-                //                 Text(
-                //                     "Sua participação é importante! Entenda como colaborar com a nossa pesquisa.",
-                //                     style: TextStyle(
-                //                         fontSize: 14,
-                //                         fontWeight: FontWeight.w600,
-                //                         color: color.AppColor.colorPurple))
-                //               ],
-                //             ))
-                //       ],
-                //     )),
                 SizedBox(height: 30),
                 Container(
                     height: 20,
@@ -271,7 +132,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           Container(
                             width:
                                 (MediaQuery.of(context).size.width - 110) / 2,
-                            height: 140,
+                            height: 150,
                             margin: const EdgeInsets.only(top: 20),
                             child: GestureDetector(
                               child: Stack(
@@ -288,8 +149,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                                           boxShadow: [
                                             BoxShadow(
                                                 offset: Offset(0, 0),
-                                                blurRadius: 20,
-                                                spreadRadius: 5,
+                                                blurRadius: 15,
+                                                spreadRadius: 10,
                                                 color: Colors.black
                                                     .withOpacity(0.05))
                                           ])),
@@ -320,14 +181,14 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                                       ))
                                 ],
                               ),
-                              onTap: () =>
-                                  Navigator.pushNamed(context, '/manual'),
+                              // onTap: () =>
+                              //     Navigator.pushNamed(context, '/manual'),
                             ),
                           ),
                           Container(
                             width:
                                 (MediaQuery.of(context).size.width - 110) / 2,
-                            height: 140,
+                            height: 150,
                             margin: EdgeInsets.only(top: 20, left: 30),
                             child: GestureDetector(
                               child: Stack(
@@ -341,8 +202,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                                           boxShadow: [
                                             BoxShadow(
                                                 offset: Offset(0, 0),
-                                                blurRadius: 20,
-                                                spreadRadius: 5,
+                                                blurRadius: 15,
+                                                spreadRadius: 10,
                                                 color: Colors.black
                                                     .withOpacity(0.05))
                                           ])),
@@ -387,7 +248,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           Container(
                             width:
                                 (MediaQuery.of(context).size.width - 110) / 2,
-                            height: 140,
+                            height: 150,
                             child: GestureDetector(
                               child: Stack(
                                 children: [
@@ -403,24 +264,24 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                                           boxShadow: [
                                             BoxShadow(
                                                 offset: Offset(0, 0),
-                                                blurRadius: 20,
-                                                spreadRadius: 5,
+                                                blurRadius: 15,
+                                                spreadRadius: 10,
                                                 color: Colors.black
                                                     .withOpacity(0.05))
                                           ])),
                                   Container(
                                       margin: const EdgeInsets.only(
-                                          top: 10,
-                                          right: 28,
+                                          top: 9,
+                                          right: 26,
                                           bottom: 35,
-                                          left: 28),
+                                          left: 26),
                                       decoration: BoxDecoration(
                                         image: DecorationImage(
                                             image: AssetImage(
                                                 "assets/img_term.png")),
                                       )),
                                   Container(
-                                      margin: const EdgeInsets.only(bottom: 20),
+                                      margin: const EdgeInsets.only(bottom: 15),
                                       child: Center(
                                         child: Align(
                                           alignment: Alignment.bottomCenter,
@@ -435,14 +296,14 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                                       ))
                                 ],
                               ),
-                              onTap: () =>
-                                  Navigator.pushNamed(context, '/terms'),
+                              // onTap: () =>
+                              //     Navigator.pushNamed(context, '/terms'),
                             ),
                           ),
                           Container(
                             width:
                                 (MediaQuery.of(context).size.width - 110) / 2,
-                            height: 140,
+                            height: 150,
                             margin: EdgeInsets.only(left: 30),
                             child: GestureDetector(
                               child: Stack(
@@ -456,8 +317,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                                           boxShadow: [
                                             BoxShadow(
                                                 offset: Offset(0, 0),
-                                                blurRadius: 20,
-                                                spreadRadius: 5,
+                                                blurRadius: 15,
+                                                spreadRadius: 10,
                                                 color: Colors.black
                                                     .withOpacity(0.05))
                                           ])),
@@ -473,7 +334,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                                                 "assets/img_covid.png")),
                                       )),
                                   Container(
-                                      margin: const EdgeInsets.only(bottom: 15),
+                                      margin: const EdgeInsets.only(bottom: 12),
                                       child: Center(
                                         child: Align(
                                           alignment: Alignment.bottomCenter,

@@ -9,21 +9,21 @@ class Splash extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.transparent,
-        body: SafeArea(
-          child: Container(
-            decoration: BoxDecoration(
-                gradient: new LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: [color.AppColor.colorBlue, color.AppColor.colorPurple],
-            )),
+        body: Container(
+          decoration: BoxDecoration(
+              gradient: new LinearGradient(
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+            colors: [color.AppColor.colorBlue, color.AppColor.colorPurple],
+          )),
+          child: SafeArea(
             child: Stack(
               children: [
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                        margin: const EdgeInsets.only(bottom: 80),
+                        margin: const EdgeInsets.only(bottom: 150),
                         width: MediaQuery.of(context).size.width,
                         height: 80,
                         decoration: BoxDecoration(
@@ -44,43 +44,45 @@ class Splash extends StatelessWidget {
                             decoration: BoxDecoration(
                               boxShadow: [
                                 BoxShadow(
-                                    offset: Offset(0, 0),
-                                    blurRadius: 5,
+                                    offset: Offset(0, 3),
+                                    blurRadius: 0,
                                     spreadRadius: 0,
-                                    color: color.AppColor.colorBlack
-                                        .withOpacity(0.2)),
+                                    color: Colors.black.withOpacity(0.2)),
                               ],
                               borderRadius: const BorderRadius.all(
                                 Radius.circular(100),
                               ),
                             ),
                             child: TextButton(
-                                onPressed: () {},
-                                child: Stack(
-                                  children: [
-                                    Container(
-                                      padding: EdgeInsets.only(
-                                          left: 20, right: 20, top: 0),
-                                      child: Text(
-                                        'Iniciar',
-                                        style: TextStyle(
-                                            fontSize: 21,
-                                            fontWeight: FontWeight.w900,
-                                            color: color.AppColor.colorPurple),
-                                      ),
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.symmetric(
+                                        vertical: 2, horizontal: 25),
+                                    child: Text(
+                                      'Iniciar',
+                                      style: TextStyle(
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.w900,
+                                          color: color.AppColor.colorPurple),
                                     ),
-                                  ],
-                                ),
-                                style: ButtonStyle(
-                                    backgroundColor:
-                                        MaterialStateProperty.all(Colors.white),
-                                    shape: MaterialStateProperty.all<
-                                            RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(100),
-                                    )))),
+                                  ),
+                                ],
+                              ),
+                              style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all(Colors.white),
+                                  shape: MaterialStateProperty.all<
+                                          RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(100),
+                                  ))),
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/home');
+                              },
+                            ),
                           ),
-                          SizedBox(height: 20),
+                          SizedBox(height: 30),
                           Container(
                             child: Column(
                               children: [

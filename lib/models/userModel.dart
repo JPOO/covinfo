@@ -4,12 +4,16 @@ class UserModel {
   String? gender;
   String? race;
   String? bloodType;
-  double? height;
   double? weight;
-  String? physicalActivities;
+  double? height;
   String? medicines;
+  String? physicalActivities;
+  String? vaccineType;
+  String? vaccineDose;
+  DateTime? vaccineDate;
   String? local;
-  DateTime? diagnosisDate;
+  String? type;
+  DateTime? date;
 
   UserModel(
       {this.id,
@@ -17,12 +21,16 @@ class UserModel {
       this.gender,
       this.race,
       this.bloodType,
-      this.height,
       this.weight,
-      this.physicalActivities,
+      this.height,
       this.medicines,
+      this.physicalActivities,
+      this.vaccineType,
+      this.vaccineDose,
+      this.vaccineDate,
       this.local,
-      this.diagnosisDate});
+      this.type,
+      this.date});
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
       id: json['_id'],
@@ -30,12 +38,16 @@ class UserModel {
       gender: json['gender'],
       race: json['race'],
       bloodType: json['bloodType'],
-      height: json['height'],
       weight: json['weight'],
+      height: json['height'],
       medicines: json['medicines'],
       physicalActivities: json['physicalActivities'],
+      vaccineType: json['vacineType'],
+      vaccineDose: json['vaccineDose'],
+      vaccineDate: json['vaccineDate'],
       local: json['local'],
-      diagnosisDate: json['diagnosisDate']);
+      type: json['type'],
+      date: json['date']);
 
   Map<String, dynamic> toJson() => {
         '_id': id,
@@ -43,11 +55,15 @@ class UserModel {
         'gender': gender,
         'race': race,
         'bloodType': bloodType,
-        'height': height,
         'weight': weight,
+        'height': height,
         'medicines': medicines,
         'physicalActivities': physicalActivities,
+        'vaccineType': vaccineType,
+        'vaccineDose': vaccineDose,
+        'vaccineDate': vaccineDate,
         'local': local,
-        'diagnosisDate': diagnosisDate
+        'type': type,
+        'date': date
       };
 }

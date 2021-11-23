@@ -12,6 +12,9 @@ class Manual extends StatefulWidget {
 class _ManualState extends State<Manual> {
   @override
   Widget build(BuildContext context) {
+    var _safePadding = MediaQuery.of(context).padding.top +
+        MediaQuery.of(context).padding.bottom;
+
     return Scaffold(
         backgroundColor: color.AppColor.colorBlue,
         body: SafeArea(
@@ -19,7 +22,7 @@ class _ManualState extends State<Manual> {
               child: Stack(
             children: [
               Container(
-                height: MediaQuery.of(context).size.height - 250,
+                height: MediaQuery.of(context).size.height,
                 margin: const EdgeInsets.only(top: 250),
                 decoration:
                     BoxDecoration(color: color.AppColor.pageBackgroundColor),
@@ -41,22 +44,24 @@ class _ManualState extends State<Manual> {
                           SizedBox(height: 5),
                         ],
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 5),
                       Container(
                           height: 45,
                           child: Text(
                               "Entenda como utilizar o aplicativo Covinfo de forma intuitiva e eficiente.",
                               style: TextStyle(
-                                  fontSize: 16, color: Colors.white))),
+                                  fontSize: 14, color: Colors.white))),
                       SizedBox(height: 20),
                       Container(
-                          height: MediaQuery.of(context).size.height - 266,
+                          height: MediaQuery.of(context).size.height -
+                              _safePadding -
+                              198,
                           child: Stack(
                             children: [
                               Container(
                                 decoration: BoxDecoration(
                                     color: Colors.white,
-                                    borderRadius: BorderRadius.circular(20),
+                                    borderRadius: BorderRadius.circular(15),
                                     boxShadow: [
                                       BoxShadow(
                                           offset: Offset(0, 0),

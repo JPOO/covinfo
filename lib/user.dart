@@ -1,17 +1,15 @@
 import 'package:covinfo/models/userModel.dart';
+import 'package:covinfo/service.dart';
 import 'package:covinfo/services/userService.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:intl/intl.dart';
-import 'fields.dart';
 import 'models/userModel.dart';
 
 import 'color.dart' as color;
 
 class User extends StatefulWidget {
-  const User({Key? key}) : super(key: key);
-
   @override
   _UserState createState() => _UserState();
 }
@@ -25,17 +23,25 @@ class _UserState extends State<User> {
 
   String? _bloodType;
 
-  String? _medicines;
-
-  String? _physicalActivities;
-
-  String? _local;
-
   double? _weight;
 
   double? _height;
 
-  DateTime? _diagnosisDate;
+  String? _medicines;
+
+  String? _physicalActivities;
+
+  String? _vaccineType;
+
+  String? _vaccineDose;
+
+  DateTime? _vaccineDate;
+
+  String? _local;
+
+  String? _type;
+
+  DateTime? _date;
 
   @override
   Widget build(BuildContext context) {
@@ -64,14 +70,14 @@ class _UserState extends State<User> {
                           SizedBox(height: 5),
                         ],
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 5),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                               "Suas informações são muito importantes para mantermos a base de dados atualizada.",
                               style:
-                                  TextStyle(fontSize: 16, color: Colors.white)),
+                                  TextStyle(fontSize: 14, color: Colors.white)),
                         ],
                       ),
                     ],
@@ -98,10 +104,10 @@ class _UserState extends State<User> {
                                           child: Stack(children: [
                                             Container(
                                                 padding: const EdgeInsets.only(
-                                                    top: 5,
-                                                    left: 7,
-                                                    right: 7,
-                                                    bottom: 5),
+                                                    top: 6,
+                                                    left: 12,
+                                                    right: 12,
+                                                    bottom: 6),
                                                 decoration: BoxDecoration(
                                                     color: Colors.white,
                                                     borderRadius:
@@ -117,33 +123,66 @@ class _UserState extends State<User> {
                                                     ]),
                                                 child: Text('Idade',
                                                     style: TextStyle(
-                                                        fontSize: 20,
+                                                        fontSize: 18,
                                                         color: color.AppColor
                                                             .colorPurple))),
                                           ]),
                                         ),
-                                        SizedBox(height: 20)
+                                        SizedBox(height: 25)
                                       ]),
                                       Column(
                                         children: [
                                           Text(_age.toString() + ' anos',
                                               style: TextStyle(
-                                                  fontSize: 20,
+                                                  fontSize: 18,
                                                   color: color
                                                       .AppColor.colorPurple)),
-                                          Slider(
-                                            value: _age.toDouble(),
-                                            min: 18,
-                                            max: 120,
-                                            onChanged: (value) {
-                                              setState(() {
-                                                _age = value.toInt();
-                                              });
-                                            },
+                                          SizedBox(height: 10),
+                                          SliderTheme(
+                                            data: SliderTheme.of(context)
+                                                .copyWith(
+                                              valueIndicatorColor:
+                                                  color.AppColor.colorPurple,
+                                              inactiveTrackColor: color
+                                                  .AppColor.colorPurple
+                                                  .withOpacity(0.2),
+                                              activeTrackColor: color
+                                                  .AppColor.colorPurple
+                                                  .withOpacity(0.2),
+                                              thumbColor:
+                                                  color.AppColor.colorPurple,
+                                              overlayColor: color
+                                                  .AppColor.colorPurple
+                                                  .withOpacity(0.2),
+                                              thumbShape: RoundSliderThumbShape(
+                                                  enabledThumbRadius: 13),
+                                              overlayShape:
+                                                  RoundSliderOverlayShape(
+                                                      overlayRadius: 20),
+                                            ),
+                                            child: Slider(
+                                              value: _age.toDouble(),
+                                              min: 18,
+                                              max: 120,
+                                              onChanged: (value) {
+                                                setState(() {
+                                                  _age = value.toInt();
+                                                });
+                                              },
+                                            ),
                                           ),
                                         ],
                                       ),
-                                      SizedBox(height: 20),
+                                      // SizedBox(height: 30),
+                                      // Container(
+                                      //     margin: const EdgeInsets.only(
+                                      //         left: 50, right: 50),
+                                      //     child: Divider(
+                                      //       color: color.AppColor.colorPurple
+                                      //           .withOpacity(0.3),
+                                      //       height: 0,
+                                      //     )),
+                                      SizedBox(height: 30),
                                       Column(children: [
                                         Container(
                                           width:
@@ -151,10 +190,10 @@ class _UserState extends State<User> {
                                           child: Stack(children: [
                                             Container(
                                                 padding: const EdgeInsets.only(
-                                                    top: 5,
-                                                    left: 7,
-                                                    right: 7,
-                                                    bottom: 5),
+                                                    top: 6,
+                                                    left: 12,
+                                                    right: 12,
+                                                    bottom: 6),
                                                 decoration: BoxDecoration(
                                                     color: Colors.white,
                                                     borderRadius:
@@ -170,12 +209,12 @@ class _UserState extends State<User> {
                                                     ]),
                                                 child: Text('Gênero',
                                                     style: TextStyle(
-                                                        fontSize: 20,
+                                                        fontSize: 18,
                                                         color: color.AppColor
                                                             .colorPurple))),
                                           ]),
                                         ),
-                                        SizedBox(height: 20)
+                                        SizedBox(height: 25)
                                       ]),
                                       Column(
                                         children: [
@@ -219,7 +258,7 @@ class _UserState extends State<User> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(height: 20),
+                                      SizedBox(height: 30),
                                       Column(children: [
                                         Container(
                                           width:
@@ -227,10 +266,10 @@ class _UserState extends State<User> {
                                           child: Stack(children: [
                                             Container(
                                                 padding: const EdgeInsets.only(
-                                                    top: 5,
-                                                    left: 7,
-                                                    right: 7,
-                                                    bottom: 5),
+                                                    top: 6,
+                                                    left: 12,
+                                                    right: 12,
+                                                    bottom: 6),
                                                 decoration: BoxDecoration(
                                                     color: Colors.white,
                                                     borderRadius:
@@ -246,12 +285,12 @@ class _UserState extends State<User> {
                                                     ]),
                                                 child: Text('Raça',
                                                     style: TextStyle(
-                                                        fontSize: 20,
+                                                        fontSize: 18,
                                                         color: color.AppColor
                                                             .colorPurple))),
                                           ]),
                                         ),
-                                        SizedBox(height: 20)
+                                        SizedBox(height: 25)
                                       ]),
                                       Column(
                                         children: [
@@ -259,7 +298,7 @@ class _UserState extends State<User> {
                                             decoration: BoxDecoration(
                                                 color: Colors.white,
                                                 borderRadius:
-                                                    BorderRadius.circular(10),
+                                                    BorderRadius.circular(5),
                                                 boxShadow: [
                                                   BoxShadow(
                                                       offset: Offset(0, 0),
@@ -269,7 +308,6 @@ class _UserState extends State<User> {
                                                           .withOpacity(0.1))
                                                 ]),
                                             child: DropdownButtonFormField(
-                                              // isExpanded: true,
                                               value: _race,
                                               icon: Icon(
                                                   Icons.keyboard_arrow_down,
@@ -307,7 +345,7 @@ class _UserState extends State<User> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(height: 20),
+                                      SizedBox(height: 30),
                                       Column(children: [
                                         Container(
                                           width:
@@ -315,10 +353,10 @@ class _UserState extends State<User> {
                                           child: Stack(children: [
                                             Container(
                                                 padding: const EdgeInsets.only(
-                                                    top: 5,
-                                                    left: 7,
-                                                    right: 7,
-                                                    bottom: 5),
+                                                    top: 6,
+                                                    left: 12,
+                                                    right: 12,
+                                                    bottom: 6),
                                                 decoration: BoxDecoration(
                                                     color: Colors.white,
                                                     borderRadius:
@@ -334,12 +372,12 @@ class _UserState extends State<User> {
                                                     ]),
                                                 child: Text('Tipo sanguíneo',
                                                     style: TextStyle(
-                                                        fontSize: 20,
+                                                        fontSize: 18,
                                                         color: color.AppColor
                                                             .colorPurple))),
                                           ]),
                                         ),
-                                        SizedBox(height: 20)
+                                        SizedBox(height: 25)
                                       ]),
                                       Column(
                                         children: [
@@ -347,7 +385,7 @@ class _UserState extends State<User> {
                                             decoration: BoxDecoration(
                                                 color: Colors.white,
                                                 borderRadius:
-                                                    BorderRadius.circular(10),
+                                                    BorderRadius.circular(5),
                                                 boxShadow: [
                                                   BoxShadow(
                                                       offset: Offset(0, 0),
@@ -357,7 +395,6 @@ class _UserState extends State<User> {
                                                           .withOpacity(0.1))
                                                 ]),
                                             child: DropdownButtonFormField(
-                                              // isExpanded: true,
                                               value: _race,
                                               icon: Icon(
                                                   Icons.keyboard_arrow_down,
@@ -379,7 +416,7 @@ class _UserState extends State<User> {
                                                 'B-',
                                                 'AB+',
                                                 'AB-',
-                                                '0+',
+                                                'O+',
                                                 'O-'
                                               ].map((String value) {
                                                 return DropdownMenuItem<String>(
@@ -398,7 +435,7 @@ class _UserState extends State<User> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(height: 20),
+                                      SizedBox(height: 30),
                                       Column(children: [
                                         Container(
                                           width:
@@ -406,10 +443,10 @@ class _UserState extends State<User> {
                                           child: Stack(children: [
                                             Container(
                                                 padding: const EdgeInsets.only(
-                                                    top: 5,
-                                                    left: 7,
-                                                    right: 7,
-                                                    bottom: 5),
+                                                    top: 6,
+                                                    left: 12,
+                                                    right: 12,
+                                                    bottom: 6),
                                                 decoration: BoxDecoration(
                                                     color: Colors.white,
                                                     borderRadius:
@@ -425,12 +462,12 @@ class _UserState extends State<User> {
                                                     ]),
                                                 child: Text('Peso',
                                                     style: TextStyle(
-                                                        fontSize: 20,
+                                                        fontSize: 18,
                                                         color: color.AppColor
                                                             .colorPurple))),
                                           ]),
                                         ),
-                                        SizedBox(height: 20)
+                                        SizedBox(height: 25)
                                       ]),
                                       Column(
                                         children: [
@@ -449,7 +486,6 @@ class _UserState extends State<User> {
                                                           .withOpacity(0.1))
                                                 ]),
                                             child: TextFormField(
-                                              // controller: _weight,
                                               keyboardType:
                                                   TextInputType.number,
                                               minLines: 1,
@@ -487,7 +523,7 @@ class _UserState extends State<User> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(height: 20),
+                                      SizedBox(height: 30),
                                       Column(children: [
                                         Container(
                                           width:
@@ -495,10 +531,10 @@ class _UserState extends State<User> {
                                           child: Stack(children: [
                                             Container(
                                                 padding: const EdgeInsets.only(
-                                                    top: 5,
-                                                    left: 7,
-                                                    right: 7,
-                                                    bottom: 5),
+                                                    top: 6,
+                                                    left: 12,
+                                                    right: 12,
+                                                    bottom: 6),
                                                 decoration: BoxDecoration(
                                                     color: Colors.white,
                                                     borderRadius:
@@ -514,12 +550,12 @@ class _UserState extends State<User> {
                                                     ]),
                                                 child: Text('Altura',
                                                     style: TextStyle(
-                                                        fontSize: 20,
+                                                        fontSize: 18,
                                                         color: color.AppColor
                                                             .colorPurple))),
                                           ]),
                                         ),
-                                        SizedBox(height: 20)
+                                        SizedBox(height: 25)
                                       ]),
                                       Column(
                                         children: [
@@ -538,7 +574,6 @@ class _UserState extends State<User> {
                                                           .withOpacity(0.1))
                                                 ]),
                                             child: TextFormField(
-                                              // controller: _height,
                                               keyboardType:
                                                   TextInputType.number,
                                               minLines: 1,
@@ -576,7 +611,7 @@ class _UserState extends State<User> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(height: 20),
+                                      SizedBox(height: 50),
                                       Column(children: [
                                         Container(
                                           width:
@@ -584,10 +619,10 @@ class _UserState extends State<User> {
                                           child: Stack(children: [
                                             Container(
                                                 padding: const EdgeInsets.only(
-                                                    top: 5,
-                                                    left: 7,
-                                                    right: 7,
-                                                    bottom: 5),
+                                                    top: 6,
+                                                    left: 12,
+                                                    right: 12,
+                                                    bottom: 6),
                                                 decoration: BoxDecoration(
                                                     color: Colors.white,
                                                     borderRadius:
@@ -604,7 +639,7 @@ class _UserState extends State<User> {
                                                 child: Text(
                                                     'Medicamentos e vitaminas',
                                                     style: TextStyle(
-                                                        fontSize: 20,
+                                                        fontSize: 18,
                                                         color: color.AppColor
                                                             .colorPurple))),
                                           ]),
@@ -627,7 +662,6 @@ class _UserState extends State<User> {
                                                             .withOpacity(0.1))
                                                   ]),
                                               child: TextFormField(
-                                                // controller: _medicines,
                                                 keyboardType:
                                                     TextInputType.text,
                                                 minLines: 5,
@@ -640,7 +674,7 @@ class _UserState extends State<User> {
                                                     border: OutlineInputBorder(
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              10),
+                                                              5),
                                                       borderSide: BorderSide(
                                                         width: 0,
                                                         style: BorderStyle.none,
@@ -665,7 +699,7 @@ class _UserState extends State<User> {
                                               )),
                                         ],
                                       ),
-                                      SizedBox(height: 20),
+                                      SizedBox(height: 30),
                                       Column(children: [
                                         Container(
                                           width:
@@ -673,10 +707,10 @@ class _UserState extends State<User> {
                                           child: Stack(children: [
                                             Container(
                                                 padding: const EdgeInsets.only(
-                                                    top: 5,
-                                                    left: 7,
-                                                    right: 7,
-                                                    bottom: 5),
+                                                    top: 6,
+                                                    left: 12,
+                                                    right: 12,
+                                                    bottom: 6),
                                                 decoration: BoxDecoration(
                                                     color: Colors.white,
                                                     borderRadius:
@@ -693,12 +727,12 @@ class _UserState extends State<User> {
                                                 child: Text(
                                                     'Atívidades físicas',
                                                     style: TextStyle(
-                                                        fontSize: 20,
+                                                        fontSize: 18,
                                                         color: color.AppColor
                                                             .colorPurple))),
                                           ]),
                                         ),
-                                        SizedBox(height: 20)
+                                        SizedBox(height: 25)
                                       ]),
                                       Column(
                                         children: [
@@ -727,7 +761,7 @@ class _UserState extends State<User> {
                                                   border: OutlineInputBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            10),
+                                                            5),
                                                     borderSide: BorderSide(
                                                       width: 0,
                                                       style: BorderStyle.none,
@@ -753,7 +787,115 @@ class _UserState extends State<User> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(height: 20),
+
+                                      SizedBox(height: 30),
+                                      Column(
+                                        children: [
+                                          Container(
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            child: Stack(children: [
+                                              Container(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          top: 6,
+                                                          left: 12,
+                                                          right: 12,
+                                                          bottom: 6),
+                                                  decoration: BoxDecoration(
+                                                      color: Colors.white,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              5),
+                                                      boxShadow: [
+                                                        BoxShadow(
+                                                            offset:
+                                                                Offset(0, 0),
+                                                            blurRadius: 5,
+                                                            spreadRadius: 0,
+                                                            color: Colors.black
+                                                                .withOpacity(
+                                                                    0.1))
+                                                      ]),
+                                                  child: Text('Vacina aplicada',
+                                                      style: TextStyle(
+                                                          fontSize: 18,
+                                                          color: color.AppColor
+                                                              .colorPurple))),
+                                            ]),
+                                          ),
+                                          SizedBox(height: 10),
+                                          Container(
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            child: Stack(children: [
+                                              Container(
+                                                  child: Text(
+                                                      'Defina a farmacêutica da última dose aplicada da vacina.',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          color: color.AppColor
+                                                              .colorInput))),
+                                            ]),
+                                          ),
+                                          SizedBox(height: 20)
+                                        ],
+                                      ),
+                                      Column(
+                                        children: [
+                                          Container(
+                                            decoration: BoxDecoration(
+                                                color: Colors.white,
+                                                borderRadius:
+                                                    BorderRadius.circular(5),
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                      offset: Offset(0, 0),
+                                                      blurRadius: 5,
+                                                      spreadRadius: 0,
+                                                      color: Colors.black
+                                                          .withOpacity(0.1))
+                                                ]),
+                                            child: DropdownButtonFormField(
+                                              value: _race,
+                                              icon: Icon(
+                                                  Icons.keyboard_arrow_down,
+                                                  color: color
+                                                      .AppColor.colorPurple,
+                                                  size: 30),
+                                              decoration: InputDecoration(
+                                                border: InputBorder.none,
+                                                contentPadding:
+                                                    EdgeInsets.symmetric(
+                                                        horizontal: 15),
+                                              ),
+                                              hint: Text('Selecione a vacina'),
+                                              items: [
+                                                'Nenhuma vacina',
+                                                'Astrazeneca/Oxford/Fiocruz',
+                                                'Coronavac/Butantan/Sinovac',
+                                                'Janssem/Johnson&Johnson',
+                                                'Pfizer/BioNTech/Cominarty'
+                                              ].map((String value) {
+                                                return DropdownMenuItem<String>(
+                                                  value: value,
+                                                  child: Text(value,
+                                                      style: TextStyle(
+                                                          color: color.AppColor
+                                                              .colorText,
+                                                          fontSize: 18)),
+                                                );
+                                              }).toList(),
+                                              onChanged: (value) {
+                                                _vaccineType = value.toString();
+                                              },
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(height: 30),
                                       Column(children: [
                                         Container(
                                           width:
@@ -761,10 +903,204 @@ class _UserState extends State<User> {
                                           child: Stack(children: [
                                             Container(
                                                 padding: const EdgeInsets.only(
-                                                    top: 5,
-                                                    left: 7,
-                                                    right: 7,
-                                                    bottom: 5),
+                                                    top: 6,
+                                                    left: 12,
+                                                    right: 12,
+                                                    bottom: 6),
+                                                decoration: BoxDecoration(
+                                                    color: Colors.white,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5),
+                                                    boxShadow: [
+                                                      BoxShadow(
+                                                          offset: Offset(0, 0),
+                                                          blurRadius: 5,
+                                                          spreadRadius: 0,
+                                                          color: Colors.black
+                                                              .withOpacity(0.1))
+                                                    ]),
+                                                child: Text('Doses aplicadas',
+                                                    style: TextStyle(
+                                                        fontSize: 18,
+                                                        color: color.AppColor
+                                                            .colorPurple))),
+                                          ]),
+                                        ),
+                                        SizedBox(height: 10),
+                                        Container(
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          child: Stack(children: [
+                                            Container(
+                                                child: Text(
+                                                    'Total de doses já aplicadas até o momento.',
+                                                    style: TextStyle(
+                                                        fontSize: 14,
+                                                        color: color.AppColor
+                                                            .colorInput))),
+                                          ]),
+                                        ),
+                                        SizedBox(height: 20)
+                                      ]),
+                                      Column(
+                                        children: [
+                                          Container(
+                                            decoration: BoxDecoration(
+                                                color: Colors.white,
+                                                borderRadius:
+                                                    BorderRadius.circular(5),
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                      offset: Offset(0, 0),
+                                                      blurRadius: 5,
+                                                      spreadRadius: 0,
+                                                      color: Colors.black
+                                                          .withOpacity(0.1))
+                                                ]),
+                                            child: DropdownButtonFormField(
+                                              value: _race,
+                                              icon: Icon(
+                                                  Icons.keyboard_arrow_down,
+                                                  color: color
+                                                      .AppColor.colorPurple,
+                                                  size: 30),
+                                              decoration: InputDecoration(
+                                                border: InputBorder.none,
+                                                contentPadding:
+                                                    EdgeInsets.symmetric(
+                                                        horizontal: 15),
+                                              ),
+                                              hint: Text(
+                                                  'Selecione a quantidade de doses'),
+                                              items: [
+                                                'Nenhuma dose',
+                                                '1ª dose',
+                                                '2ª dose ou dose única',
+                                                '3ª dose (dose de reforço) ou mais'
+                                              ].map((String value) {
+                                                return DropdownMenuItem<String>(
+                                                  value: value,
+                                                  child: Text(value,
+                                                      style: TextStyle(
+                                                          color: color.AppColor
+                                                              .colorText,
+                                                          fontSize: 18)),
+                                                );
+                                              }).toList(),
+                                              onChanged: (value) {
+                                                _vaccineDose = value.toString();
+                                              },
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(height: 30),
+                                      Column(children: [
+                                        Container(
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          child: Stack(children: [
+                                            Container(
+                                                padding: const EdgeInsets.only(
+                                                    top: 6,
+                                                    left: 12,
+                                                    right: 12,
+                                                    bottom: 6),
+                                                decoration: BoxDecoration(
+                                                    color: Colors.white,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5),
+                                                    boxShadow: [
+                                                      BoxShadow(
+                                                          offset: Offset(0, 0),
+                                                          blurRadius: 5,
+                                                          spreadRadius: 0,
+                                                          color: Colors.black
+                                                              .withOpacity(0.1))
+                                                    ]),
+                                                child: Text(
+                                                    'Data da última aplicação',
+                                                    style: TextStyle(
+                                                        fontSize: 18,
+                                                        color: color.AppColor
+                                                            .colorPurple))),
+                                          ]),
+                                        ),
+                                        SizedBox(height: 25)
+                                      ]),
+                                      Column(
+                                        children: [
+                                          Text(
+                                              _vaccineDate == null
+                                                  ? 'Nenhuma data selecionada'
+                                                  : DateFormat('dd/MM/yyyy')
+                                                      .format(_vaccineDate!),
+                                              style: TextStyle(
+                                                  fontSize: 18,
+                                                  color: color
+                                                      .AppColor.colorText)),
+                                          Container(
+                                            child: TextButton(
+                                                style: ButtonStyle(
+                                                    padding:
+                                                        MaterialStateProperty
+                                                            .all(EdgeInsets
+                                                                .symmetric(
+                                                                    vertical: 0,
+                                                                    horizontal:
+                                                                        20)),
+                                                    backgroundColor:
+                                                        MaterialStateProperty
+                                                            .all(color.AppColor
+                                                                .colorBlue),
+                                                    shape: MaterialStateProperty
+                                                        .all<RoundedRectangleBorder>(
+                                                            RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              100),
+                                                    ))),
+                                                child: Text(
+                                                  _vaccineDate == null
+                                                      ? 'Defina uma data'
+                                                      : 'Defina uma nova data',
+                                                  style: TextStyle(
+                                                      fontSize: 15,
+                                                      color: color
+                                                          .AppColor.colorWhite),
+                                                ),
+                                                onPressed: () {
+                                                  showDatePicker(
+                                                          context: context,
+                                                          initialDate:
+                                                              DateTime.now(),
+                                                          firstDate: DateTime(
+                                                              2019, 12, 1),
+                                                          lastDate:
+                                                              DateTime.now())
+                                                      .then((date) {
+                                                    setState(() {
+                                                      _vaccineDate = date;
+                                                    });
+                                                  });
+                                                }),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(height: 30),
+                                      Column(children: [
+                                        Container(
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          child: Stack(children: [
+                                            Container(
+                                                padding: const EdgeInsets.only(
+                                                    top: 6,
+                                                    left: 12,
+                                                    right: 12,
+                                                    bottom: 6),
                                                 decoration: BoxDecoration(
                                                     color: Colors.white,
                                                     borderRadius:
@@ -781,12 +1117,12 @@ class _UserState extends State<User> {
                                                 child: Text(
                                                     'Local do diagnóstico',
                                                     style: TextStyle(
-                                                        fontSize: 20,
+                                                        fontSize: 19,
                                                         color: color.AppColor
                                                             .colorPurple))),
                                           ]),
                                         ),
-                                        SizedBox(height: 20)
+                                        SizedBox(height: 25)
                                       ]),
                                       Column(
                                         children: [
@@ -804,7 +1140,6 @@ class _UserState extends State<User> {
                                                           .withOpacity(0.1))
                                                 ]),
                                             child: TextFormField(
-                                              // controller: _local,
                                               keyboardType: TextInputType.text,
                                               minLines: 1,
                                               maxLines: 1,
@@ -841,7 +1176,99 @@ class _UserState extends State<User> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(height: 20),
+                                      SizedBox(height: 30),
+                                      Column(
+                                        children: [
+                                          Container(
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            child: Stack(children: [
+                                              Container(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          top: 6,
+                                                          left: 12,
+                                                          right: 12,
+                                                          bottom: 6),
+                                                  decoration: BoxDecoration(
+                                                      color: Colors.white,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              5),
+                                                      boxShadow: [
+                                                        BoxShadow(
+                                                            offset:
+                                                                Offset(0, 0),
+                                                            blurRadius: 5,
+                                                            spreadRadius: 0,
+                                                            color: Colors.black
+                                                                .withOpacity(
+                                                                    0.1))
+                                                      ]),
+                                                  child: Text(
+                                                      'Método do diagnóstico',
+                                                      style: TextStyle(
+                                                          fontSize: 18,
+                                                          color: color.AppColor
+                                                              .colorPurple))),
+                                            ]),
+                                          ),
+                                          SizedBox(height: 20)
+                                        ],
+                                      ),
+                                      Column(
+                                        children: [
+                                          Container(
+                                            decoration: BoxDecoration(
+                                                color: Colors.white,
+                                                borderRadius:
+                                                    BorderRadius.circular(5),
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                      offset: Offset(0, 0),
+                                                      blurRadius: 5,
+                                                      spreadRadius: 0,
+                                                      color: Colors.black
+                                                          .withOpacity(0.1))
+                                                ]),
+                                            child: DropdownButtonFormField(
+                                              value: _type,
+                                              icon: Icon(
+                                                  Icons.keyboard_arrow_down,
+                                                  color: color
+                                                      .AppColor.colorPurple,
+                                                  size: 30),
+                                              decoration: InputDecoration(
+                                                border: InputBorder.none,
+                                                contentPadding:
+                                                    EdgeInsets.symmetric(
+                                                        horizontal: 15),
+                                              ),
+                                              hint: Text('Selecione o exame'),
+                                              items: [
+                                                'RT-PCR/PCR',
+                                                'Sorologia',
+                                                'Antígeno',
+                                                'Outro'
+                                              ].map((String value) {
+                                                return DropdownMenuItem<String>(
+                                                  value: value,
+                                                  child: Text(value,
+                                                      style: TextStyle(
+                                                          color: color.AppColor
+                                                              .colorText,
+                                                          fontSize: 18)),
+                                                );
+                                              }).toList(),
+                                              onChanged: (value) {
+                                                _bloodType = value.toString();
+                                              },
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(height: 30),
                                       Column(children: [
                                         Container(
                                           width:
@@ -849,10 +1276,10 @@ class _UserState extends State<User> {
                                           child: Stack(children: [
                                             Container(
                                                 padding: const EdgeInsets.only(
-                                                    top: 5,
-                                                    left: 7,
-                                                    right: 7,
-                                                    bottom: 5),
+                                                    top: 6,
+                                                    left: 12,
+                                                    right: 12,
+                                                    bottom: 6),
                                                 decoration: BoxDecoration(
                                                     color: Colors.white,
                                                     borderRadius:
@@ -869,20 +1296,20 @@ class _UserState extends State<User> {
                                                 child: Text(
                                                     'Data do diagnóstico',
                                                     style: TextStyle(
-                                                        fontSize: 20,
+                                                        fontSize: 18,
                                                         color: color.AppColor
                                                             .colorPurple))),
                                           ]),
                                         ),
-                                        SizedBox(height: 20)
+                                        SizedBox(height: 25)
                                       ]),
                                       Column(
                                         children: [
                                           Text(
-                                              _diagnosisDate == null
+                                              _date == null
                                                   ? 'Nenhuma data selecionada'
                                                   : DateFormat('dd/MM/yyyy')
-                                                      .format(_diagnosisDate),
+                                                      .format(_date!),
                                               style: TextStyle(
                                                   fontSize: 18,
                                                   color: color
@@ -909,7 +1336,7 @@ class _UserState extends State<User> {
                                                               100),
                                                     ))),
                                                 child: Text(
-                                                  _diagnosisDate == null
+                                                  _date == null
                                                       ? 'Defina uma data'
                                                       : 'Defina uma nova data',
                                                   style: TextStyle(
@@ -928,14 +1355,14 @@ class _UserState extends State<User> {
                                                               DateTime.now())
                                                       .then((date) {
                                                     setState(() {
-                                                      _diagnosisDate = date;
+                                                      _date = date;
                                                     });
                                                   });
                                                 }),
                                           ),
                                         ],
                                       ),
-                                      SizedBox(height: 20),
+                                      SizedBox(height: 30),
                                       Column(
                                         children: [
                                           Container(
@@ -999,12 +1426,15 @@ class _UserState extends State<User> {
                                                     bloodType: _bloodType,
                                                     height: _height,
                                                     weight: _weight,
+                                                    medicines: _medicines,
                                                     physicalActivities:
                                                         _physicalActivities,
-                                                    medicines: _medicines,
+                                                    vaccineType: _vaccineType,
+                                                    vaccineDose: _vaccineDose,
+                                                    vaccineDate: _vaccineDate,
                                                     local: _local,
-                                                    diagnosisDate:
-                                                        _diagnosisDate);
+                                                    type: _type,
+                                                    date: _date);
 
                                                 final userService =
                                                     UserService();
@@ -1015,29 +1445,55 @@ class _UserState extends State<User> {
 
                                                 _userModel.then((user) {
                                                   if (user.id == null) {
-                                                    Fluttertoast.showToast(
-                                                        msg:
-                                                            "Erro ao salvar dados.",
-                                                        toastLength:
-                                                            Toast.LENGTH_LONG,
-                                                        gravity: ToastGravity
-                                                            .BOTTOM_LEFT,
-                                                        backgroundColor:
-                                                            Colors.red,
-                                                        textColor: Colors.white,
-                                                        fontSize: 16);
+                                                    showToast(
+                                                      "Erro ao salvar dados.",
+                                                      context: context,
+                                                      animation:
+                                                          StyledToastAnimation
+                                                              .fade,
+                                                      reverseAnimation:
+                                                          StyledToastAnimation
+                                                              .fade,
+                                                      position:
+                                                          StyledToastPosition
+                                                              .bottom,
+                                                      duration:
+                                                          Duration(seconds: 2),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              100),
+                                                      backgroundColor:
+                                                          Colors.red,
+                                                    );
                                                   } else {
-                                                    Fluttertoast.showToast(
-                                                        msg:
-                                                            "Dados salvos com sucesso!",
-                                                        toastLength:
-                                                            Toast.LENGTH_LONG,
-                                                        gravity: ToastGravity
-                                                            .BOTTOM_LEFT,
-                                                        backgroundColor:
-                                                            Colors.green,
-                                                        textColor: Colors.white,
-                                                        fontSize: 16);
+                                                    MyService idUser =
+                                                        MyService();
+
+                                                    idUser.addIdUser(
+                                                        user.id.toString());
+
+                                                    idUser.idUser;
+
+                                                    showToast(
+                                                      "Dados salvos com sucesso!",
+                                                      context: context,
+                                                      animation:
+                                                          StyledToastAnimation
+                                                              .fade,
+                                                      reverseAnimation:
+                                                          StyledToastAnimation
+                                                              .fade,
+                                                      position:
+                                                          StyledToastPosition
+                                                              .bottom,
+                                                      duration:
+                                                          Duration(seconds: 2),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              100),
+                                                      backgroundColor:
+                                                          Colors.green,
+                                                    );
 
                                                     Navigator.pushNamed(
                                                         context, '/diagnosis');
@@ -1048,6 +1504,22 @@ class _UserState extends State<User> {
                                           ),
                                         ],
                                       ),
+                                      SizedBox(height: 10),
+                                      Container(
+                                        padding: EdgeInsets.zero,
+                                        alignment: Alignment.centerLeft,
+                                        child: TextButton(
+                                          child: Text(
+                                            "VOLTAR",
+                                            style: TextStyle(
+                                                fontSize: 15,
+                                                color:
+                                                    color.AppColor.colorBlue),
+                                          ),
+                                          onPressed: () =>
+                                              Navigator.pop(context, false),
+                                        ),
+                                      )
                                     ],
                                   ),
                                 ),

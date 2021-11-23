@@ -3,11 +3,11 @@ import 'package:covinfo/models/diagnosisModel.dart';
 import 'package:http/http.dart' as http;
 
 class DiagnosisService {
-  static const url = 'http://10.0.2.2:3000/diagnoses';
+  static const url = 'https://covinfo-api.herokuapp.com/diagnoses';
   static const headers = {"content-type": "application/json"};
 
-  Future<DiagnosisModel> postUser(DiagnosisModel diagnosis) async {
-    var diagnosisModel = null;
+  Future<DiagnosisModel> postDiagnosis(DiagnosisModel diagnosis) async {
+    var diagnosisModel = new DiagnosisModel();
 
     try {
       final response = await http.post(Uri.parse(url),
