@@ -1,4 +1,4 @@
-Privacy Policy  
+Política de Privacidade 
 ----------------
 
 ### Introdução
