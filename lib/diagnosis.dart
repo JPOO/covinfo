@@ -303,8 +303,7 @@ class _DiagnosisState extends State<Diagnosis> {
                                                         offset: Offset(0, 0),
                                                         blurRadius: 20,
                                                         spreadRadius: 0,
-                                                        color: color
-                                                            .AppColor.colorBlack
+                                                        color: Colors.black
                                                             .withOpacity(0.2))
                                                   ]),
                                                   width: 300,
@@ -546,9 +545,8 @@ class _DiagnosisState extends State<Diagnosis> {
                                                             : 'Defina uma nova data',
                                                         style: TextStyle(
                                                             fontSize: 15,
-                                                            color: color
-                                                                .AppColor
-                                                                .colorWhite),
+                                                            color:
+                                                                Colors.white),
                                                       ),
                                                       onPressed: () {
                                                         showDatePicker(
@@ -658,9 +656,8 @@ class _DiagnosisState extends State<Diagnosis> {
                                                             : 'Defina uma nova data',
                                                         style: TextStyle(
                                                             fontSize: 15,
-                                                            color: color
-                                                                .AppColor
-                                                                .colorWhite),
+                                                            color:
+                                                                Colors.white),
                                                       ),
                                                       onPressed: () {
                                                         showDatePicker(
@@ -750,8 +747,7 @@ class _DiagnosisState extends State<Diagnosis> {
                                                         offset: Offset(0, 0),
                                                         blurRadius: 20,
                                                         spreadRadius: 0,
-                                                        color: color
-                                                            .AppColor.colorBlack
+                                                        color: Colors.black
                                                             .withOpacity(0.2))
                                                   ]),
                                                   width: 300,
@@ -986,8 +982,7 @@ class _DiagnosisState extends State<Diagnosis> {
                                                         offset: Offset(0, 0),
                                                         blurRadius: 20,
                                                         spreadRadius: 0,
-                                                        color: color
-                                                            .AppColor.colorBlack
+                                                        color: Colors.black
                                                             .withOpacity(0.2))
                                                   ]),
                                                   width: 300,
@@ -1039,6 +1034,39 @@ class _DiagnosisState extends State<Diagnosis> {
                                                                       100),
                                                         ))),
                                                     onPressed: () {
+                                                      String?
+                                                          newSymptomsOnsetDate;
+
+                                                      if ([
+                                                        "",
+                                                        null,
+                                                        false
+                                                      ].contains(
+                                                          _symptomsOnsetDate)) {
+                                                        newSymptomsOnsetDate =
+                                                            '';
+                                                      } else {
+                                                        newSymptomsOnsetDate =
+                                                            _symptomsOnsetDate
+                                                                .toString();
+                                                      }
+
+                                                      String?
+                                                          newSymptomsEndDate;
+
+                                                      if ([
+                                                        "",
+                                                        null,
+                                                        false
+                                                      ].contains(
+                                                          _symptomsEndDate)) {
+                                                        newSymptomsEndDate = '';
+                                                      } else {
+                                                        newSymptomsEndDate =
+                                                            _symptomsEndDate
+                                                                .toString();
+                                                      }
+
                                                       MyService user =
                                                           MyService();
 
@@ -1047,12 +1075,15 @@ class _DiagnosisState extends State<Diagnosis> {
                                                           riskFactors:
                                                               _riskFactors,
                                                           symptomsOnsetDate:
-                                                              _symptomsOnsetDate,
+                                                              newSymptomsOnsetDate,
                                                           symptomsEndDate:
-                                                              _symptomsEndDate,
+                                                              newSymptomsEndDate,
                                                           symptoms: _symptoms,
                                                           afterEffects:
                                                               _afterEffects);
+
+                                                      print(diagnosis
+                                                          .symptomsOnsetDate);
 
                                                       final diagnosisService =
                                                           DiagnosisService();
@@ -1186,7 +1217,7 @@ class TabButton extends StatelessWidget {
             BoxShadow(
                 offset: Offset(0, 3),
                 blurRadius: 0,
-                color: color.AppColor.colorBlack.withOpacity(0.2))
+                color: Colors.black.withOpacity(0.2))
           ],
         ),
         padding: EdgeInsets.symmetric(

@@ -43,7 +43,7 @@ class _AboutState extends State<About> {
                                   style: TextStyle(
                                       fontSize: 22,
                                       fontWeight: FontWeight.w900,
-                                      color: color.AppColor.colorWhite)),
+                                      color: Colors.white)),
                               SizedBox(height: 5),
                             ],
                           ),
@@ -65,7 +65,7 @@ class _AboutState extends State<About> {
                             children: [
                               Container(
                                 decoration: BoxDecoration(
-                                    color: color.AppColor.colorWhite,
+                                    color: Colors.white,
                                     borderRadius: BorderRadius.circular(15),
                                     boxShadow: [
                                       BoxShadow(

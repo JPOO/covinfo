@@ -1,5 +1,9 @@
+import 'package:covinfo/service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:geocoding/geocoding.dart';
+
 import 'color.dart' as color;
 
 class AcceptPermission extends StatefulWidget {
@@ -165,7 +169,27 @@ class _AcceptPermissionState extends State<AcceptPermission> {
                                         RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(100),
                                     ))),
-                                onPressed: () {
+                                onPressed: () async {
+                                  Position position =
+                                      await Geolocator.getCurrentPosition(
+                                          desiredAccuracy:
+                                              LocationAccuracy.best);
+
+                                  List<Placemark> placemarks =
+                                      await placemarkFromCoordinates(
+                                          position.latitude,
+                                          position.longitude);
+
+                                  Placemark place = placemarks[0];
+
+                                  if (place.locality != null &&
+                                      place.administrativeArea != null) {
+                                    MyService service = MyService();
+
+                                    service.addLocal(
+                                        "${place.locality}, ${place.administrativeArea}");
+                                  }
+
                                   Navigator.pushNamed(context, '/user');
                                 }),
                           ),

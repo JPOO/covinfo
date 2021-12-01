@@ -51,9 +51,8 @@ class _PolicyState extends State<Policy> {
                           height: 45,
                           child: Text(
                               "Dúvidas sobre a nossa Política de privacidade? Agora você pode acessar quantas vezes quiser!",
-                              style: TextStyle(
-                                  fontSize: 14,
-                                  color: color.AppColor.colorWhite)),
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.white)),
                         ),
                       ),
                       SizedBox(height: 20),

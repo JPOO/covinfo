@@ -417,7 +417,8 @@ class _AcceptPPolicyState extends State<AcceptPolicy> {
                                       borderRadius: BorderRadius.circular(100),
                                     ))),
                                 onPressed: () {
-                                  Navigator.pushNamed(context, '/user');
+                                  Navigator.pushNamed(
+                                      context, '/accept_permission');
                                 }),
                           ),
                         ],

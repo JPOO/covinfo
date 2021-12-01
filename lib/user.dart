@@ -1,6 +1,7 @@
 import 'package:covinfo/models/userModel.dart';
 import 'package:covinfo/service.dart';
 import 'package:covinfo/services/userService.dart';
+import 'package:easy_mask/easy_mask.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
@@ -23,9 +24,9 @@ class _UserState extends State<User> {
 
   String? _bloodType;
 
-  double? _weight;
+  String? _weight;
 
-  double? _height;
+  String? _height;
 
   String? _medicines;
 
@@ -43,8 +44,14 @@ class _UserState extends State<User> {
 
   DateTime? _date;
 
+  MyService service = MyService();
+
   @override
   Widget build(BuildContext context) {
+    if (service.local != null) {
+      _local = service.local;
+    }
+
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: color.AppColor.colorBlue,
@@ -232,11 +239,23 @@ class _UserState extends State<User> {
                                                   });
                                                 },
                                               ),
-                                              Text('Masculino',
-                                                  style: TextStyle(
-                                                      fontSize: 18,
-                                                      color: color
-                                                          .AppColor.colorText)),
+                                              InkWell(
+                                                child: Text('Masculino',
+                                                    style: TextStyle(
+                                                        fontSize: 18,
+                                                        color: color.AppColor
+                                                            .colorText)),
+                                                onTap: () {
+                                                  setState(() {
+                                                    _gender = 'male';
+                                                  });
+                                                },
+                                              ),
+                                              // Text('Masculino',
+                                              //     style: TextStyle(
+                                              //         fontSize: 18,
+                                              //         color: color
+                                              //             .AppColor.colorText)),
                                               SizedBox(width: 10),
                                               Radio(
                                                 value: 'female',
@@ -249,11 +268,23 @@ class _UserState extends State<User> {
                                                   });
                                                 },
                                               ),
-                                              Text('Feminino',
-                                                  style: TextStyle(
-                                                      fontSize: 18,
-                                                      color: color
-                                                          .AppColor.colorText)),
+                                              InkWell(
+                                                child: Text('Feminino',
+                                                    style: TextStyle(
+                                                        fontSize: 18,
+                                                        color: color.AppColor
+                                                            .colorText)),
+                                                onTap: () {
+                                                  setState(() {
+                                                    _gender = 'female';
+                                                  });
+                                                },
+                                              ),
+                                              // Text('Feminino',
+                                              //     style: TextStyle(
+                                              //         fontSize: 18,
+                                              //         color: color
+                                              //             .AppColor.colorText)),
                                             ],
                                           ),
                                         ],
@@ -395,7 +426,7 @@ class _UserState extends State<User> {
                                                           .withOpacity(0.1))
                                                 ]),
                                             child: DropdownButtonFormField(
-                                              value: _race,
+                                              value: _bloodType,
                                               icon: Icon(
                                                   Icons.keyboard_arrow_down,
                                                   color: color
@@ -472,7 +503,7 @@ class _UserState extends State<User> {
                                       Column(
                                         children: [
                                           Container(
-                                            width: 75,
+                                            width: 105,
                                             decoration: BoxDecoration(
                                                 color: Colors.white,
                                                 borderRadius:
@@ -486,6 +517,10 @@ class _UserState extends State<User> {
                                                           .withOpacity(0.1))
                                                 ]),
                                             child: TextFormField(
+                                              inputFormatters: [
+                                                TextInputMask(
+                                                    mask: ['99,999', '999,999'])
+                                              ],
                                               keyboardType:
                                                   TextInputType.number,
                                               minLines: 1,
@@ -504,7 +539,7 @@ class _UserState extends State<User> {
                                                       style: BorderStyle.none,
                                                     ),
                                                   ),
-                                                  hintText: '70 Kg',
+                                                  hintText: '70,000 Kg',
                                                   hintStyle: TextStyle(
                                                       color: color
                                                           .AppColor.colorInput,
@@ -517,7 +552,7 @@ class _UserState extends State<User> {
                                                       color.AppColor.colorText,
                                                   fontSize: 18),
                                               onChanged: (value) {
-                                                _weight = double.parse(value);
+                                                _weight = value;
                                               },
                                             ),
                                           ),
@@ -560,7 +595,7 @@ class _UserState extends State<User> {
                                       Column(
                                         children: [
                                           Container(
-                                            width: 85,
+                                            width: 90,
                                             decoration: BoxDecoration(
                                                 color: Colors.white,
                                                 borderRadius:
@@ -574,6 +609,9 @@ class _UserState extends State<User> {
                                                           .withOpacity(0.1))
                                                 ]),
                                             child: TextFormField(
+                                              inputFormatters: [
+                                                TextInputMask(mask: ['9,99'])
+                                              ],
                                               keyboardType:
                                                   TextInputType.number,
                                               minLines: 1,
@@ -592,7 +630,7 @@ class _UserState extends State<User> {
                                                       style: BorderStyle.none,
                                                     ),
                                                   ),
-                                                  hintText: '175 cm',
+                                                  hintText: '1,75 mt',
                                                   hintStyle: TextStyle(
                                                       color: color
                                                           .AppColor.colorInput,
@@ -605,7 +643,7 @@ class _UserState extends State<User> {
                                                       color.AppColor.colorText,
                                                   fontSize: 18),
                                               onChanged: (value) {
-                                                _height = double.parse(value);
+                                                _height = value;
                                               },
                                             ),
                                           ),
@@ -859,7 +897,7 @@ class _UserState extends State<User> {
                                                           .withOpacity(0.1))
                                                 ]),
                                             child: DropdownButtonFormField(
-                                              value: _race,
+                                              value: _vaccineType,
                                               icon: Icon(
                                                   Icons.keyboard_arrow_down,
                                                   color: color
@@ -959,7 +997,7 @@ class _UserState extends State<User> {
                                                           .withOpacity(0.1))
                                                 ]),
                                             child: DropdownButtonFormField(
-                                              value: _race,
+                                              value: _vaccineDose,
                                               icon: Icon(
                                                   Icons.keyboard_arrow_down,
                                                   color: color
@@ -1068,8 +1106,7 @@ class _UserState extends State<User> {
                                                       : 'Defina uma nova data',
                                                   style: TextStyle(
                                                       fontSize: 15,
-                                                      color: color
-                                                          .AppColor.colorWhite),
+                                                      color: Colors.white),
                                                 ),
                                                 onPressed: () {
                                                   showDatePicker(
@@ -1140,6 +1177,7 @@ class _UserState extends State<User> {
                                                           .withOpacity(0.1))
                                                 ]),
                                             child: TextFormField(
+                                              initialValue: service.local,
                                               keyboardType: TextInputType.text,
                                               minLines: 1,
                                               maxLines: 1,
@@ -1262,7 +1300,7 @@ class _UserState extends State<User> {
                                                 );
                                               }).toList(),
                                               onChanged: (value) {
-                                                _bloodType = value.toString();
+                                                _type = value.toString();
                                               },
                                             ),
                                           ),
@@ -1341,8 +1379,7 @@ class _UserState extends State<User> {
                                                       : 'Defina uma nova data',
                                                   style: TextStyle(
                                                       fontSize: 15,
-                                                      color: color
-                                                          .AppColor.colorWhite),
+                                                      color: Colors.white),
                                                 ),
                                                 onPressed: () {
                                                   showDatePicker(
@@ -1372,8 +1409,7 @@ class _UserState extends State<User> {
                                                   offset: Offset(0, 0),
                                                   blurRadius: 20,
                                                   spreadRadius: 0,
-                                                  color: color
-                                                      .AppColor.colorBlack
+                                                  color: Colors.black
                                                       .withOpacity(0.2))
                                             ]),
                                             width: 300,
@@ -1419,22 +1455,65 @@ class _UserState extends State<User> {
                                                             100),
                                                   ))),
                                               onPressed: () {
+                                                double? _weightDouble;
+
+                                                if (!["", null, false]
+                                                    .contains(_weight)) {
+                                                  _weightDouble = double.parse(
+                                                      double.parse(_weight
+                                                              .toString()
+                                                              .replaceAll(
+                                                                  ",", "."))
+                                                          .toStringAsFixed(3));
+                                                }
+
+                                                double? _heightDouble;
+
+                                                if (!["", null, false]
+                                                    .contains(_height)) {
+                                                  _heightDouble = double.parse(
+                                                      double.parse(_height
+                                                              .toString()
+                                                              .replaceAll(
+                                                                  ",", "."))
+                                                          .toStringAsFixed(2));
+                                                }
+
+                                                String? newVaccineDate;
+
+                                                if (["", null, false]
+                                                    .contains(_vaccineDate)) {
+                                                  newVaccineDate = '';
+                                                } else {
+                                                  newVaccineDate =
+                                                      _vaccineDate.toString();
+                                                }
+
+                                                String? newDate;
+
+                                                if (["", null, false]
+                                                    .contains(_date)) {
+                                                  newDate = '';
+                                                } else {
+                                                  newDate = _date.toString();
+                                                }
+
                                                 final user = UserModel(
                                                     age: _age,
                                                     gender: _gender,
                                                     race: _race,
                                                     bloodType: _bloodType,
-                                                    height: _height,
-                                                    weight: _weight,
+                                                    weight: _weightDouble,
+                                                    height: _heightDouble,
                                                     medicines: _medicines,
                                                     physicalActivities:
                                                         _physicalActivities,
                                                     vaccineType: _vaccineType,
                                                     vaccineDose: _vaccineDose,
-                                                    vaccineDate: _vaccineDate,
+                                                    vaccineDate: newVaccineDate,
                                                     local: _local,
                                                     type: _type,
-                                                    date: _date);
+                                                    date: newDate);
 
                                                 final userService =
                                                     UserService();
@@ -1444,6 +1523,8 @@ class _UserState extends State<User> {
                                                     userService.postUser(user);
 
                                                 _userModel.then((user) {
+                                                  print(user.id);
+
                                                   if (user.id == null) {
                                                     showToast(
                                                       "Erro ao salvar dados.",
@@ -1466,13 +1547,11 @@ class _UserState extends State<User> {
                                                           Colors.red,
                                                     );
                                                   } else {
-                                                    MyService idUser =
+                                                    MyService service =
                                                         MyService();
 
-                                                    idUser.addIdUser(
+                                                    service.addIdUser(
                                                         user.id.toString());
-
-                                                    idUser.idUser;
 
                                                     showToast(
                                                       "Dados salvos com sucesso!",

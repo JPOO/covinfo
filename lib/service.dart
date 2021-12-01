@@ -4,7 +4,7 @@ class MyService {
   factory MyService() => _instance;
 
   MyService._internal() {
-    _idUser = '';
+    _idUser = _local = '';
   }
 
   late String _idUser;
@@ -14,4 +14,12 @@ class MyService {
   set idUser(String value) => _idUser = value;
 
   void addIdUser(String value) => _idUser = value;
+
+  late String _local;
+
+  String get local => _local;
+
+  set local(String value) => _local = value;
+
+  void addLocal(String value) => _local = value;
 }

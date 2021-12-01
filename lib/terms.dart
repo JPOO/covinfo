@@ -51,9 +51,8 @@ class _TermsState extends State<Terms> {
                           height: 45,
                           child: Text(
                               "Os Termos de uso são importantes para você entender as normas de utilização do aplicativo.",
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  color: color.AppColor.colorWhite)),
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.white)),
                         ),
                       ),
                       SizedBox(height: 20),

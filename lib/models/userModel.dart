@@ -10,10 +10,10 @@ class UserModel {
   String? physicalActivities;
   String? vaccineType;
   String? vaccineDose;
-  DateTime? vaccineDate;
+  String? vaccineDate;
   String? local;
   String? type;
-  DateTime? date;
+  String? date;
 
   UserModel(
       {this.id,

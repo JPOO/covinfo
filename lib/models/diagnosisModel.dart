@@ -2,8 +2,8 @@ class DiagnosisModel {
   String? id;
   String? idUser;
   String? riskFactors;
-  DateTime? symptomsOnsetDate;
-  DateTime? symptomsEndDate;
+  String? symptomsOnsetDate;
+  String? symptomsEndDate;
   String? symptoms;
   String? afterEffects;
 
@@ -22,7 +22,7 @@ class DiagnosisModel {
       riskFactors: json['risk_factors'],
       symptomsOnsetDate: json['symptomsOnsetDate'],
       symptomsEndDate: json['symptomsEndDate'],
-      symptoms: json['symtoms'],
+      symptoms: json['symptoms'],
       afterEffects: json['after_effects']);
 
   Map<String, dynamic> toJson() => {
@@ -31,7 +31,7 @@ class DiagnosisModel {
         'riskFactors': riskFactors,
         'symptomsOnsetDate': symptomsOnsetDate,
         'symptomsEndDate': symptomsEndDate,
-        'symtoms': symptoms,
+        'symptoms': symptoms,
         'afterEffects': afterEffects
       };
 }

@@ -1,15 +1,16 @@
 import 'package:covinfo/about.dart';
 import 'package:covinfo/user.dart';
 import 'package:covinfo/manual.dart';
-import 'package:covinfo/accept_policy.dart';
+import 'package:covinfo/acceptPolicy.dart';
 import 'package:covinfo/policy.dart';
 import 'package:covinfo/splash.dart';
 import 'package:covinfo/terms.dart';
 import 'package:flutter/material.dart';
 import 'diagnosis.dart';
 import 'home.dart';
-import 'accept_permission.dart';
+import 'acceptPermission.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,11 +24,21 @@ class MyApp extends StatelessWidget {
       title: 'Confinfo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-      ).copyWith(
-          textTheme: GoogleFonts.openSansTextTheme(
-        Theme.of(context).textTheme,
-      )),
+        fontFamily: GoogleFonts.openSans().fontFamily,
+        // fontFamily: GoogleFonts.openSans(textStyle:)
+        // textTheme: GoogleFonts.openSansTextTheme(
+        //   Theme.of(context).textTheme,
+        // )
+      ),
+      // ).copyWith(
+      //     textTheme: GoogleFonts.openSansTextTheme(
+      //   Theme.of(context).textTheme,
+      // )),
       home: Splash(),
+      localizationsDelegates: [GlobalMaterialLocalizations.delegate],
+      supportedLocales: [
+        Locale('pt'),
+      ],
       onGenerateRoute: (RouteSettings settings) {
         final List<String> pathElements = settings.name!.split('/');
 
