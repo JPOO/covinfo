@@ -1,4 +1,4 @@
-Termos de Uso
+Termo de Uso
 ----------------
 
 ### Introdução
